@@ -1,0 +1,59 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1174.vdcb_d054cf74a_">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2075.vce74e77b_ce40"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2075.vce74e77b_ce40">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2686.v7c37e0578401">
+    <script>pipeline {
+    agent { label &apos;tomcat&apos;}
+    stages {
+        stage(&apos;checkout&apos;) {
+            steps {
+                sh &apos;echo &quot;testing the checkout stage of pipeline&quot;&apos;
+                sh &apos;sudo mkdir -p /home/ubuntu/javaproject&apos;
+                sh &apos;sudo chmod -R 777 /home/ubuntu&apos;
+                dir(&quot;/home/ubuntu/javaproject&quot;) {
+                        sh &apos;sudo rm -rf hello-world-war&apos;
+                        sh &apos;git clone https://github.com/sraahul/hello-world-war.git&apos;
+                }
+                
+            }
+        }
+        stage(&apos;build&apos;) {
+            steps {
+                sh &apos;echo &quot;testing the build stage of pipeline&quot;&apos;
+                dir(&quot;/home/ubuntu/javaproject/hello-world-war&quot;) {
+                        sh &apos;pwd&apos;
+                        sh &apos;mvn package&apos;
+                }
+                
+            }
+        }
+        stage(&apos;deploy&apos;) {
+            steps {
+                sh &apos;echo &quot;testing the deploy stage of pipeline&quot;&apos;
+                dir(&quot;/home/ubuntu/javaproject/hello-world-war/target&quot;) {
+                       sh &apos;sudo cp -r hello-world-war-1.0.0.war /opt/apache-tomcat-9.0.62/webapps/&apos;
+                       sh &apos;sudo sh /opt/apache-tomcat-9.0.62/bin/shutdown.sh&apos;
+                       sh &apos;sleep 5&apos;
+                       sh &apos;sudo sh /opt/apache-tomcat-9.0.62/bin/startup.sh&apos;
+                }
+                
+            }
+        }
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

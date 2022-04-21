@@ -1,0 +1,37 @@
+Started by user [8mha:////4OOIckTNzRlZGH3SrJjUyYmcU+ST56J1pDPIHmdiKN+7AAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZe/dLi1CL94qLEjNKcYgCWzWTswgAAAA==[0mrahul
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/installjenkins
+[installjenkins] $ /bin/bash /tmp/jenkins10195814349891556450.sh
+Warning: apt-key output should not be parsed (stdout is not a terminal)
+OK
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Ign:1 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Hit:5 https://pkg.jenkins.io/debian-stable binary/ Release
+Get:6 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Fetched 336 kB in 0s (682 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+110 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+jenkins is already the newest version (2.332.2).
+0 upgraded, 0 newly installed, 0 to remove and 110 not upgraded.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+default-jre is already the newest version (2:1.11-72).
+0 upgraded, 0 newly installed, 0 to remove and 110 not upgraded.
+Finished: SUCCESS

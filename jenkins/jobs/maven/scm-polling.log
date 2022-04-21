@@ -1,0 +1,12 @@
+Started on Apr 20, 2022, 2:22:00 AM
+Using strategy: Default
+[poll] Last Built Revision: Revision b5162c7f4c1c202d369538dc7a6ecba270ebac77 (refs/remotes/origin/master)
+The recommended git tool is: NONE
+No credentials specified
+ > git --version # timeout=10
+ > git --version # 'git version 2.25.1'
+ > git ls-remote -h -- https://github.com/sraahul/hello-world-war.git # timeout=10
+Found 4 remote heads on https://github.com/sraahul/hello-world-war.git
+[poll] Latest remote head revision on refs/heads/master is: b5162c7f4c1c202d369538dc7a6ecba270ebac77 - already built by 7
+Done. Took 0.11 sec
+No changes
